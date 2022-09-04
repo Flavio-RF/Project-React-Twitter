@@ -4,9 +4,13 @@ import Router from "./components/Router";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <div className="bg-zinc-600 text-white">
+      <div className="">
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </div>
+    </div>
   );
 }
 

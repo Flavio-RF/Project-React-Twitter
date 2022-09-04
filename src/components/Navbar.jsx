@@ -3,13 +3,7 @@ import "./navbar.css";
 
 function Navbar() {
   return (
-    <div>
-      <NavLink
-        to="/new-tweet"
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        New tweet{" "}
-      </NavLink>
+    <div className=" flex justify-between p-3">
       <NavLink
         to="/tweets"
         className={({ isActive }) => (isActive ? "active" : "")}
@@ -17,8 +11,18 @@ function Navbar() {
         Tweets{" "}
       </NavLink>
       <NavLink
-        to="/logout"
+        to="/new-tweet"
         className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        New tweet{" "}
+      </NavLink>
+      <NavLink
+        to="/logout"
+        className={({ isActive }) =>
+          isActive
+            ? "active bg-red-600 px-2 py-1 rounded-sm text-sm "
+            : "bg-red-600 px-2 py-1 rounded-sm text-sm"
+        }
       >
         Logout
       </NavLink>

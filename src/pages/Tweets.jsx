@@ -15,16 +15,23 @@ function Tweets() {
   }, []);
 
   return (
-    <div>
-      {data.map((tweet) => {
-        return (
-          <div key={tweet.author._id}>
-            <h1>{tweet.author.username}</h1>
-            <p>{tweet.text}</p>
-            <hr />
-          </div>
-        );
-      })}
+    <div className="flex items-center justify-center">
+      <div className="w-1/6">
+        {data.map((tweet) => {
+          return (
+            <div
+              className="grid-cols-1 items-center justify-center mt-12"
+              key={tweet.author._id}
+            >
+              <div>
+                <h1>@{tweet.author.username}</h1>
+                <p>{tweet.text}</p>
+              </div>
+              <hr />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
