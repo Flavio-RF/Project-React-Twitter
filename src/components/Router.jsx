@@ -7,6 +7,8 @@ import SignUp from "../pages/SignUp";
 import RequiresAuth from "./RequiresAuth";
 import Authenticated from "./Authenticated";
 import Logout from "./Logout";
+import NavbarPublic from "./NavbarPublic";
+import Navbar from "./Navbar";
 
 function Router() {
   return (
@@ -15,6 +17,7 @@ function Router() {
         path="/login"
         element={
           <Authenticated>
+            <NavbarPublic />
             <Login />
           </Authenticated>
         }
@@ -23,6 +26,7 @@ function Router() {
         path="/signup"
         element={
           <Authenticated>
+            <NavbarPublic />
             <SignUp />
           </Authenticated>
         }
@@ -31,11 +35,20 @@ function Router() {
         path="/new-tweet"
         element={
           <RequiresAuth>
+            <Navbar />
             <NewTweet />
           </RequiresAuth>
         }
       />
-      <Route path="/tweets" element={<Tweets />} />
+
+      <Route
+        path="/tweets"
+        element={
+          <RequiresAuth>
+            <Navbar /> <Tweets />
+          </RequiresAuth>
+        }
+      />
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       <Route path="*" element={<NotFound />} />

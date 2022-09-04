@@ -1,29 +1,22 @@
 import { NavLink } from "react-router-dom";
-import "./navbar.css";
 
-function Navbar() {
+function NavbarPublic() {
   return (
     <div>
       <NavLink
-        to="/new-tweet"
+        to="/signup"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        New tweet{" "}
+        Signup{" "}
       </NavLink>
       <NavLink
-        to="/tweets"
+        to="/login"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        Tweets{" "}
-      </NavLink>
-      <NavLink
-        to="/logout"
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        Logout
+        Login{" "}
       </NavLink>
     </div>
   );
 }
 
-export default Navbar;
+export default NavbarPublic;
